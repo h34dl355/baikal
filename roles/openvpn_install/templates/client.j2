@@ -1,0 +1,25 @@
+client
+nobind
+dev {{ interface_type }}
+key-direction 1
+remote-cert-tls server
+remote {{ server_ip }} {{ vpn_port }} {{ transport_protocol }}
+auth-nocache
+comp-lzo
+reneg-sec 259200
+
+<key>
+{{ user_key }}
+</key>
+
+<cert>
+{{ user_cert}}
+</cert>
+
+<ca>
+{{ ca_cert }}
+</ca>
+
+<tls-auth>
+{{ tls_key }}
+</tls-auth>

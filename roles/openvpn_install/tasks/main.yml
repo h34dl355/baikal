@@ -1,0 +1,13 @@
+---
+# tasks file for openvpn_install
+
+- block: #ubuntu xenial
+  - name: Install openvpn
+    apt: update_cache=yes name=openvpn state=present
+    tags: install
+  
+  - name: Create config for openvpn client
+    template: src=client.j2 dest=/etc/openvpn/client.conf
+    notify: Restart openvpn
+    tags: config
+  when: ansible_distribution_release == "xenial"

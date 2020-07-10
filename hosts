@@ -1,0 +1,7 @@
+[openvpn_clients]
+68.183.101.250
+157.230.12.151
+[openvpn_clients:vars]
+ansible_user=root
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'

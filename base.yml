@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - { role: openvpn_install, tags: ["install", "config"] }
